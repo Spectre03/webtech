@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head runat="server">
+    <title>TechWeb Solutions - <asp:ContentPlaceHolder ID="TitleContent" runat="server"></asp:ContentPlaceHolder></title>
+    <style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.nav {
+    background: #2980b9;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.content {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1.5rem 1rem;
+    }
+}
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+    <h1>TechWeb Solutions</h1>
+</div>
+        <div class="nav">
+    <div class="nav-container">
+        <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Default.aspx" Text="Home" CssClass="nav-link"></asp:HyperLink>
+        <asp:HyperLink ID="lnkAbout" runat="server" NavigateUrl="~/About.aspx" Text="About Us" CssClass="nav-link"></asp:HyperLink>
+        <asp:HyperLink ID="lnkServices" runat="server" NavigateUrl="~/Services.aspx" Text="Services" CssClass="nav-link"></asp:HyperLink>
+        <asp:HyperLink ID="lnkContact" runat="server" NavigateUrl="~/Contact.aspx" Text="Contact" CssClass="nav-link"></asp:HyperLink>
+    </div>
+</div>
+<div class="content">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <!-- Default content placeholder -->
+        <div class="content-placeholder">
+            <h2>Welcome to TechWeb Solutions</h2>
+            <p>Built to Lead</p>
+        </div>
+    </asp:ContentPlaceHolder>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 TechWeb Solutions. All rights reserved.</p>
+    <p>Email: info@techwebsolutions.com | Phone: (555) 123-4567</p>
+</div>
+    </form>
+</body>
+</html>
